@@ -1,5 +1,5 @@
 import pytest
-from app import add, subtract, multiply, divide
+from app import add, subtract, multiply, divide,check_even
 def test_add():
     assert add(2, 3) == 5
     assert add(-1, 1) == 0
@@ -21,3 +21,9 @@ def test_divide():
     assert divide(0, 1) == 0
     with pytest.raises(ValueError):
         divide(5, 0)
+def test_check_even():
+    assert check_even(2) == True
+    assert check_even(3) == False
+    assert check_even(0) == True
+    assert check_even(-4) == True
+    assert check_even(-5) == False
